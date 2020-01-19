@@ -1,5 +1,7 @@
 {
-  "engines" : { "node" : ">=6" },
+  "engines": {
+    "node": ">=6"
+  },
   "name": "VimDiesel",
   "private": true,
   "dependencies": {
