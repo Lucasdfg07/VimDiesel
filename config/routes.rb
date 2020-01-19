@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "welcome#index"
+
+  get 'products/index'
+  get 'create', to: 'products#create'
+  get 'remove', to: 'products#remove'
+  get 'search', to: 'products#search'
+
+  get 'quem_somos/index'
 end

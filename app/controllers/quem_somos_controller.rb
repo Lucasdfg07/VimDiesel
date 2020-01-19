@@ -1,0 +1,2 @@
+class QuemSomosController < ApplicationController
+end

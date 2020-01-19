@@ -1,15 +1,13 @@
 class InsertService
-    def initialize(params)
-        @product = params["name"]
+    def initialize(product)
+        @product = product
     end
-
+  
     def call
-        return 'Nome do produto inválido!' if @product == nil
-
-        # Product.transaction do
-            product = Product.create(name: @product)
-        # end
-        
-        "Produto inserido, com sucesso!"
+        if @product.present?
+            Product.create(name: @product)
+        else
+            return 'Nome do produto inválido!'
+        end
     end
 end

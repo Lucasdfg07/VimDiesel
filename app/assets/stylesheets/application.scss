@@ -1,0 +1,32 @@
+@import "bootstrap/dist/css/bootstrap.css";
+@import "welcome.scss";
+@import "products.scss";
+@import "quem_somos.scss";
+
+.alert, .notice {
+  position: absolute;
+  width: 100%;
+  opacity: 0.2;
+}
+
+nav {
+    background-color: rgba(240,240,240,0.7);
+
+    .navbar-nav a:hover {
+      text-decoration: underline;
+    }
+    
+    .navbar-nav {
+      margin-left: 10%;
+    }
+
+    .navbar-nav a {
+      margin: 0px 40px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .navbar-nav a:hover {
+      text-decoration: underline;
+    }
+}

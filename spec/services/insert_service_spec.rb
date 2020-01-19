@@ -17,11 +17,7 @@ describe InsertService do
 
         context 'With valid params' do
             it 'Return success message' do
-                @insertService = InsertService.new(@product)
-                @response = @insertService.call()
-
-                puts "-----------------------------------"
-                puts @insertService
+                InsertService.new(@product).call
 
                 expect(Product.count).to eq(1)
             end

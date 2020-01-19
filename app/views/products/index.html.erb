@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="search_div">
+            <%= form_tag('/search', method: :get) do |f| %>
+                <div class="row">
+                    <%= text_field_tag :name, params[:name]%>
+                    <%= submit_tag 'Procurar', class: 'btn btn-primary col-md-2' %>
+                </div>
+            <% end %>
+    </div>
+
+    <div class="lista">
+        <%= form_tag('/create', method: :get) do %>
+            <div class="row">
+                <%= text_field_tag :name, params[:name]%>
+                <%= submit_tag 'Criar', class: 'btn btn-success col-md-2' %>
+            </div>
+        <% end %>
+        <div class="lista_nomes">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% if params[:id].present? %>
+                        <tr>
+                            <td><%= params[:id] %></td>
+                            <td><%= params[:name] %></td>
+                        </tr>
+                    <% else %>
+                        <% @products.each do |product| %>
+                            <tr>
+                                <td><%= product.id %></td>
+                                <td><%= product.name %></td>
+                                <td><%= link_to 'Apagar', remove_path(id: product.id), class: 'btn btn-danger' %></td>
+                            </tr>
+                        <% end %>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
