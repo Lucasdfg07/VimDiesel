@@ -6,17 +6,26 @@ describe ListService do
         context "list commands" do
             context 'None products in database' do
                 it 'Return dont find message' do
-                    response = ListService.new({}).call
-                    expect(response).to match(Product.all)
+                    response = ListService.new("wrong_name").call
+                    expect(response).to match("Nada encontrado")
                 end
             end
 
             context 'One or more products in database' do
-                it 'Return the list' do
-                    @product = Product.create(name: "teste")
+                context 'Enter a correct value' do
+                    it 'Return the product find on search' do
+                        @product = Product.create(name: "teste")
 
-                    response = ListService.new({"query" => @product.name}).call
-                    expect(response).to match(@product.name)
+                        response = ListService.new(@product.name).call
+                        expect(response).to match(Product.find_by(name: @product.name))
+                    end
+                end
+
+                context 'Enter a nil value' do
+                    it 'Return all the products' do
+                        response = ListService.new({}).call
+                        expect(response).to match(Product.all)
+                    end
                 end
             end
         end
