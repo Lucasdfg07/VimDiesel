@@ -3,6 +3,9 @@
 @import "products.scss";
 @import "quem_somos.scss";
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 .alert, .notice {
   position: absolute;
   width: 100%;

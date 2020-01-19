@@ -2,7 +2,7 @@
     <div class="search_div">
             <%= form_tag('/search', method: :get) do |f| %>
                 <div class="row">
-                    <%= text_field_tag :name, params[:name]%>
+                    <%= text_field_tag :name, params[:name], placeholder: 'Procure um poduto!', class: 'col-md-10'%>
                     <%= submit_tag 'Procurar', class: 'btn btn-primary col-md-2' %>
                 </div>
             <% end %>
@@ -11,7 +11,7 @@
     <div class="lista">
         <%= form_tag('/create', method: :get) do %>
             <div class="row">
-                <%= text_field_tag :name, params[:name]%>
+                <%= text_field_tag :name, params[:name], placeholder: 'Digite o nome do produto e clique em criar!', class: 'col-md-9'%>
                 <%= submit_tag 'Criar', class: 'btn btn-success col-md-2' %>
             </div>
         <% end %>
