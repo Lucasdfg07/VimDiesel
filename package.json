@@ -1,8 +1,10 @@
 {
+  "engines" : { "node" : ">=6" },
   "name": "VimDiesel",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1"
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "tether": "^1.4.7"
   }
 }
